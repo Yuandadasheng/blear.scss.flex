@@ -1,6 +1,6 @@
 # blear.scss.flex
 
-<https://blear.ydr.me/MODULE_NAME>
+<https://blear.ydr.me/scss/flex>
 
 [![npm module][npm-img]][npm-url]
 [![build status][travis-img]][travis-url]
