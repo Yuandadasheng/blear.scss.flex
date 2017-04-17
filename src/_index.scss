@@ -1,24 +1,20 @@
 // @ref https://github.com/zessx/sass-flexbox/blob/master/sass-flexbox.scss
 // @ref https://github.com/mastastealth/sass-flex-mixin/blob/master/_flex.scss
 
-// 块级 flex
+// flex
 // @ref http://w3.org/tr/css3-flexbox/#flex-containers
-@mixin flex {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flexbox;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
-
-//----------------------------------------------------------------------
-
-// 行内 flex
-// @ref http://w3.org/tr/css3-flexbox/#flex-containers
-@mixin inline-flex {
-  display: -webkit-inline-flex;
-  display: inline-flex;
+@mixin flex($display: block) {
+  @if ($display == block) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  } @else {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+  }
 }
 
 //----------------------------------------------------------------------
@@ -27,21 +23,21 @@
 // 取值: row | row-reverse | column | column-reverse
 // 默认：row
 // @ref http://w3.org/tr/css3-flexbox/#flex-direction-property
-@mixin flex-direction($flex-direction: "row") {
-  $box-orient: "horizontal";
-  $box-direction: "inherit";
+@mixin flex-direction($flex-direction: row) {
+  $box-orient: horizontal;
+  $box-direction: inherit;
 
-  @if ($flex-direction == "column") {
-    $box-orient: "vertical";
-    $box-direction: "inherit";
-  } @else if ($flex-direction == "column-reverse") {
-    $box-orient: "vertical";
-    $box-direction: "reverse";
-  } @else if ($flex-direction == "row-reverse") {
-    $box-orient: "horizontal";
-    $box-direction: "reverse";
+  @if ($flex-direction == column) {
+    $box-orient: vertical;
+    $box-direction: inherit;
+  } @else if ($flex-direction == column-reverse) {
+    $box-orient: vertical;
+    $box-direction: reverse;
+  } @else if ($flex-direction == row-reverse) {
+    $box-orient: horizontal;
+    $box-direction: reverse;
   } @else {
-    $direction: "row";
+    $direction: row;
   }
 
   -webkit-box-orient: $box-orient;
@@ -60,11 +56,11 @@
 // 取值: nowrap | wrap | wrap-reverse
 // 默认: nowrap
 // @ref http://w3.org/tr/css3-flexbox/#flex-wrap-property
-@mixin flex-wrap($value: "nowrap") {
+@mixin flex-wrap($value: nowrap) {
   -webkit-flex-wrap: $value;
   -moz-flex-wrap: $value;
 
-  @if ($value == "nowrap") {
+  @if ($value == nowrap) {
     -ms-flex-wrap: none;
   } @else {
     -ms-flex-wrap: $value;
@@ -129,17 +125,17 @@
 // 取值: flex-start | flex-end | center | space-between | space-around
 // 默认: flex-start
 // @ref http://w3.org/tr/css3-flexbox/#justify-content-property
-@mixin justify-content($value: "flex-start") {
-  @if ($value == "flex-start") {
+@mixin justify-content($value: flex-start) {
+  @if ($value == flex-start) {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
-  } @else if ($value == "flex-end") {
+  } @else if ($value == flex-end) {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
-  } @else if ($value == "space-between") {
+  } @else if ($value == space-between) {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-  } @else if ($value == "space-around") {
+  } @else if ($value == space-around) {
     -ms-flex-pack: distribute;
   } @else {
     -webkit-box-pack: $value;
@@ -157,11 +153,11 @@
 // 取值：flex-start | flex-end | center | baseline | stretch
 // 默认：stretch
 // @ref http://w3.org/tr/css3-flexbox/#align-items-property
-@mixin align-items($value: "stretch") {
-  @if ($value == "flex-start") {
+@mixin align-items($value: stretch) {
+  @if ($value == flex-start) {
     -webkit-box-align: start;
     -ms-flex-align: start;
-  } @else if ($value == "flex-end") {
+  } @else if ($value == flex-end) {
     -webkit-box-align: end;
     -ms-flex-align: end;
   } @else {
@@ -180,13 +176,13 @@
 //
 // 取值：auto | flex-start | flex-end | center | baseline | stretch
 // 默认：auto
-@mixin align-self($value: "auto") {
+@mixin align-self($value: auto) {
   -webkit-align-self: $value;
   -moz-align-self: $value;
 
-  @if ($value == "flex-start") {
+  @if ($value == flex-start) {
     -ms-flex-item-align: start;
-  } @else if ($value == "flex-end") {
+  } @else if ($value == flex-end) {
     -ms-flex-item-align: end;
   } @else {
     -ms-flex-item-align: $value;
@@ -201,13 +197,13 @@
 // 取值：flex-start | flex-end | center | space-between | space-around | stretch
 // 默认：stretch
 // @ref http://w3.org/tr/css3-flexbox/#align-content-property
-@mixin align-content($value: "stretch") {
+@mixin align-content($value: stretch) {
   -webkit-align-content: $value;
   -moz-align-content: $value;
 
-  @if ($value == "flex-start") {
+  @if ($value == flex-start) {
     -ms-flex-line-pack: start;
-  } @else if $value == ("flex-end") {
+  } @else if $value == (flex-end) {
     -ms-flex-line-pack: end;
   } @else {
     -ms-flex-line-pack: $value;

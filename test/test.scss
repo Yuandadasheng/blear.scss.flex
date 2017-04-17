@@ -1,15 +1,16 @@
 @import "../src/index";
 
+
 .flex {
   @include flex();
 }
 
 .inline-flex {
-  @include inline-flex();
+  @include flex(inline);
 }
 
 .flex-direction-row {
-  @include flex-direction('row');
+  @include flex-direction(row);
 }
 
 .flex-direction-default {
@@ -17,15 +18,15 @@
 }
 
 .flex-direction-col {
-  @include flex-direction('column');
+  @include flex-direction(column);
 }
 
 .flex-direction-row-reverse {
-  @include flex-direction('row-reverse');
+  @include flex-direction(row-reverse);
 }
 
 .flex-direction-col-reverse {
-  @include flex-direction('column-reverse');
+  @include flex-direction(column-reverse);
 }
 
 .flex-wrap-no {
@@ -33,7 +34,7 @@
 }
 
 .flex-wrap-yes {
-  @include flex-wrap("wrap");
+  @include flex-wrap(wrap);
 }
 
 .flex-basis-1 {
@@ -53,17 +54,17 @@
 }
 
 .justify-content-center {
-  @include justify-content("center");
+  @include justify-content(center);
 }
 
 .align-items-center {
-  @include align-items("center");
+  @include align-items(center);
 }
 
 .align-self-center {
-  @include align-self("center");
+  @include align-self(center);
 }
 
 .align-content-center {
-  @include align-content("center");
+  @include align-content(center);
 }
