@@ -1,9 +1,8 @@
 {
-  "name": "blear.MODULE_NAME",
+  "name": "blear.scss.flex",
   "version": "1.0.0",
-  "description": "描述",
-  "scripts": {
-  },
+  "description": "scss flex mixin",
+  "scripts": {},
   "preferGlobal": false,
   "bin": {},
   "engines": {
@@ -22,13 +21,13 @@
     "url": "http://ydr.me"
   },
   "contributors": [],
-  "homepage": "https://github.com/blearjs/blear.MODULE_NAME",
+  "homepage": "https://github.com/blearjs/blear.scss.flex",
   "repository": {
     "type": "git",
-    "url": "https://github.com/blearjs/blear.MODULE_NAME"
+    "url": "https://github.com/blearjs/blear.scss.flex"
   },
   "bugs": {
-    "url": "https://github.com/blearjs/blear.MODULE_NAME/issues"
+    "url": "https://github.com/blearjs/blear.scss.flex/issues"
   },
   "dependencies": {},
   "peerDependencies": {},
